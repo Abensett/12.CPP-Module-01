@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:15 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/08 15:44:16 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/08 16:52:13 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,17 @@ using std::string;
 class Zombie
 {
 	public:
-		Zombie( string name );
+		explicit Zombie( string name );
+		Zombie( void );
 		~Zombie( void );
 		void announce( void );
+		void set_name(string name);
 
 	private:
 		string _name;
 
 };
 
-Zombie* newZombie( std::string name );
-void randomChump( std::string name );
+Zombie* zombieHorde( int N, std::string name );
 
 #endif
