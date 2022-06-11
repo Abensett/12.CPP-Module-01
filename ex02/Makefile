@@ -14,7 +14,7 @@ WHITE 		= \033[0;m
 #                          PROJECT'S DIRECTORIES                               #
 # **************************************************************************** #
 
-NAME			= zombieland
+NAME			= hithisisbrain
 
 DIRSRC			= src/
 
@@ -37,7 +37,7 @@ LDFLAGS			=
 #                                SOURCE FILES                                  #
 # **************************************************************************** #
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

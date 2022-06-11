@@ -37,7 +37,7 @@ LDFLAGS			=
 #                                SOURCE FILES                                  #
 # **************************************************************************** #
 
-SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRC = main.cpp  Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJ := $(SRC:.cpp=.o)
 

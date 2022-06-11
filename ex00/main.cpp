@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/08 16:01:47 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/12 00:48:06 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 	randomChump stack de la fonction RandomChump*/
 int main(void)
 {
-	randomChump("Random");
+	randomChump("Random");						// Allocation statique -> stack de RandomChump
 
-	Zombie *heapz = newZombie("HeapZ");
+	Zombie *heapz = newZombie("HeapZ");			// Allocation dynamique -> heap
 	heapz->announce();
 
-	Zombie stackz = Zombie("StackZ");
+	Zombie stackz = Zombie("StackZ");			// Allocation statique -> stack
 	stackz.announce();
 
-	delete heapz;
+	delete heapz;								// Free 
 	return 0;
 }

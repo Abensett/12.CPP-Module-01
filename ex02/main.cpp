@@ -1,17 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/08 15:12:15 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 00:45:40 by abensett         ###   ########.fr       */
+/*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
+/*   Updated: 2022/06/12 01:18:26 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
 
 #include <iostream>
 #include <string>
@@ -20,24 +18,19 @@ using std::cout;
 using std::endl;
 using std::string;
 
-class Zombie
-{
-	public:
-		Zombie( void );						// Default constructor ->
-		Zombie (const Zombie&);				// Copy constructor
-		~Zombie( void );					// Destructor
-		Zombie &operator=(const Zombie&);	// Copy assignment operator
+int main(void) {
+	string str = "HI THIS IS BRAIN";
+	string *stringPTR = &str;		// pointer
+	string &stringREF = str;		// ref
 
+	cout << &str << endl;			// they have the same address
+	cout << stringPTR << endl;		// pointer -> the adress of the pointer is &stringPTR
+	cout << &stringREF << endl;		// reference -> Cant = 0 because it's already an address
 
-		explicit Zombie( string name );
-		void announce( void );
-		void set_name(string name);
+	cout << str << endl;
+	cout << *stringPTR << endl;		//value of the pointer
+	cout << stringREF << endl;		//value of the reference
 
-	private:
-		string _name;
+	return 0;
+}
 
-};
-
-Zombie* zombieHorde( int N, std::string name );
-
-#endif

@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:13 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 00:55:00 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/12 01:28:25 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Weapon.hpp"
 
 using std::cin;
 using std::cout;
 using std::endl;
 
-Zombie::Zombie (string name) : _name(name) {}
-Zombie::Zombie(void) : _name("") {}
-Zombie::~Zombie (void) {cout << "Destruction Zombie :"<< _name << endl;};
+Weapon::Weapon (string name) : _name(name) {}
+Weapon::Weapon(void) : _name("") {}
+Weapon::~Weapon (void) {cout << "Destruction Weapon :"<< _name << endl;};
 
-void Zombie::announce (void)
+const string &Weapon::getType (void)
 {
-	cout << _name << ": BraiiiiiiinnnzzzZ..." << endl;
+	return(&_type);
 }
 
-void Zombie::set_name (string name)
+void Weapon::setType (string newType)
 {
-	_name = name;
+	_type = newType;
 }

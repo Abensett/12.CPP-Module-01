@@ -1,43 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:15 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 00:45:40 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/12 01:27:23 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef Weapon_HPP
+#define Weapon_HPP
 
 #include <iostream>
 #include <string>
 
 using std::cout;
-using std::endl;
 using std::string;
 
-class Zombie
+class Weapon
 {
 	public:
-		Zombie( void );						// Default constructor ->
-		Zombie (const Zombie&);				// Copy constructor
-		~Zombie( void );					// Destructor
-		Zombie &operator=(const Zombie&);	// Copy assignment operator
+		Weapon( void );						// Default constructor ->
+		Weapon (const Weapon&);				// Copy constructor
+		~Weapon( void );					// Destructor
+		Weapon &operator=(const Weapon&);	// Copy assignment operator
 
 
-		explicit Zombie( string name );
-		void announce( void );
-		void set_name(string name);
+		const string &getType( void ) const;		// returns a const ref
+		void setType(string newType);
 
 	private:
-		string _name;
+		string _type;
 
 };
 
-Zombie* zombieHorde( int N, std::string name );
 
 #endif

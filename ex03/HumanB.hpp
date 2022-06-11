@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:15 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 00:45:40 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/12 01:29:20 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef HumanB_HPP
+#define HumanB_HPP
 
 #include <iostream>
 #include <string>
@@ -20,16 +20,16 @@ using std::cout;
 using std::endl;
 using std::string;
 
-class Zombie
+class HumanB
 {
 	public:
-		Zombie( void );						// Default constructor ->
-		Zombie (const Zombie&);				// Copy constructor
-		~Zombie( void );					// Destructor
-		Zombie &operator=(const Zombie&);	// Copy assignment operator
+		HumanB( void );						// Default constructor ->
+		HumanB (const HumanB&);				// Copy constructor
+		~HumanB( void );					// Destructor
+		HumanB &operator=(const HumanB&);	// Copy assignment operator
 
 
-		explicit Zombie( string name );
+		explicit HumanB( string name );
 		void announce( void );
 		void set_name(string name);
 
@@ -38,6 +38,6 @@ class Zombie
 
 };
 
-Zombie* zombieHorde( int N, std::string name );
+HumanB* HumanBHorde( int N, std::string name );
 
 #endif
