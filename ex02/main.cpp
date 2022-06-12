@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 17:34:59 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/13 01:31:15 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void) {
 	cout << &stringREF << endl;		// reference -> Cant = 0 because it's already an address
 
 	cout << str << endl;
-	cout << *stringPTR << endl;		//value of the pointer	-> besoin de deferencement = ajout de l'asterisque pour obtenir la valeur
+	cout << *stringPTR << endl;		//value of the pointer	-> besoin de déférencer = ajout de l'asterisque pour obtenir la valeur
 	cout << stringREF << endl;		//value of the reference -> jamais de besoin de deferencement
 
 	return 0;
