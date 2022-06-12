@@ -6,21 +6,31 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 01:12:15 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/12 17:01:32 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "Zombie.hpp"
-/* En c++ on utilise new et delete car ils font appel cons/destr
-CAS TABLEAU : CLASS *variable = new CLASS[N]
-			  delete [] variable */
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-int main(void)
+int main()
 {
-	Zombie *horde = zombieHorde(5, "Zombie");
-	for (unsigned int i = 0 ; i < 5 ; i++)
-		horde[i].announce();
-	delete [] horde;
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 	return 0;
 }

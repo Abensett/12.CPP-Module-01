@@ -14,7 +14,7 @@ WHITE 		= \033[0;m
 #                          PROJECT'S DIRECTORIES                               #
 # **************************************************************************** #
 
-NAME			= hithisisbrain
+NAME			= replace
 
 DIRSRC			= src/
 
@@ -72,3 +72,4 @@ fclean:		clean
 re:			fclean all
 
 .PHONY: all clean fclean re
+

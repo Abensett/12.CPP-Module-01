@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:13 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 01:28:25 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/12 17:00:04 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-Weapon::Weapon (string name) : _name(name) {}
-Weapon::Weapon(void) : _name("") {}
-Weapon::~Weapon (void) {cout << "Destruction Weapon :"<< _name << endl;};
+Weapon::Weapon (string name) : _type(name) {}
+Weapon::Weapon(void) : _type("") {}
+Weapon::~Weapon (void) {cout << "Destruction Weapon :"<< _type << endl;};
 
-const string &Weapon::getType (void)
+const string &Weapon::getType (void) const
 {
-	return(&_type);
+	return(_type);
 }
 
 void Weapon::setType (string newType)

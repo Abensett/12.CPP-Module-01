@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:09 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 01:11:38 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/12 17:01:12 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <sstream>
+#include "HumanB.hpp"
 
-using std::stringstream;
-Zombie* zombieHorde( int N, std::string name)
-{
-	stringstream tmp;
-	string numero;
-	int i = 0;
+using std::cout;
+using std::endl;
 
-	Zombie *horde = new Zombie[N];
-	while (i < N)
-	{
-		tmp << i;										// conversion avec stringstream equivaut itoa ou to_string (c++11)
-		numero = tmp.str();
-		horde[i].set_name(name +" numero "+ numero);
-		i++;
-		tmp.str("");									// clear stringstream sinon les chiffres se cumulent 01234
-	}
-	return (horde);
+HumanB::~HumanB (void) {cout << "Destruction HumanB :"<< _name << endl;};		// Destructor
+
+HumanB::HumanB(string name) : _name(name), _Weapon(NULL) {}						// Constructor d'initialisation
+
+void HumanB::setWeapon(const Weapon &weapon) {
+    _Weapon = &weapon;
+}
+
+void HumanB::attack(void) const {
+    if (_Weapon)
+        cout << _name << " attacks with their " << _Weapon->getType() << endl;
+    else
+        cout << _name << " is not equipped with a weapon" << endl;
 }

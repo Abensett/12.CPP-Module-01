@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:15 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 00:45:40 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/12 16:47:13 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Zombie
 		Zombie &operator=(const Zombie&);	// Copy assignment operator
 
 
-		explicit Zombie( string name );
+		Zombie( string name );
 		void announce( void );
 		void set_name(string name);
 

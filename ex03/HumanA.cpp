@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:09 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 01:11:38 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/12 17:01:03 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
-#include <sstream>
+#include "HumanA.hpp"
 
-using std::stringstream;
-Zombie* zombieHorde( int N, std::string name)
-{
-	stringstream tmp;
-	string numero;
-	int i = 0;
+using std::cout;
+using std::endl;
 
-	Zombie *horde = new Zombie[N];
-	while (i < N)
-	{
-		tmp << i;										// conversion avec stringstream equivaut itoa ou to_string (c++11)
-		numero = tmp.str();
-		horde[i].set_name(name +" numero "+ numero);
-		i++;
-		tmp.str("");									// clear stringstream sinon les chiffres se cumulent 01234
-	}
-	return (horde);
+HumanA::~HumanA (void) {cout << "Destruction HumanA :"<< _name << endl;};
+
+HumanA::HumanA(string name, const Weapon &weapon) : _name(name),
+        _Weapon(weapon) {}
+
+void HumanA::attack(void) const {
+    cout << _name << " attacks with their " << _Weapon.getType() << endl;
 }

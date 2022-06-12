@@ -73,14 +73,3 @@ re:			fclean all
 
 .PHONY: all clean fclean re
 
-# header :
-# 	@printf "$(RED)"
-# 	@printf "    __  ________   ___________ __  __________    __ \n"
-# 	@printf "   /  |/  /  _/ | / /  _/ ___// / / / ____/ /   / / \n"
-# 	@printf "  / /|_/ // //  |/ // / \__ \/ /_/ / __/ / /   / /  \n"
-# 	@printf " / /  / // // /|  // / ___/ / __  / /___/ /___/ /___\n"
-# 	@printf "/_/  /_/___/_/ |_/___//____/_/ /_/_____/_____/_____/\n"
-# 	@printf "\n"
-# 	@printf "MINISHELL COMPILATION\n"
-# 	@printf "$(RESET)"
-
