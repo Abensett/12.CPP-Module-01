@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 17:32:43 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/12 18:06:14 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,26 @@ using std::string;
 
 int main(int argc, char **argv) {
     if (argc != 4) {
-        cerr << "./replace <filename> <s1> <s2>  -> S1 will be replaced by S2  ;)" << endl;
+        cerr << "./replace <filename> <s1> <s2>  -> s1 will be replaced by s2  ;)" << endl;
         return 1;
     }
 
-    string infile = argv[1];
+    string infile = argv[1];										//name of the infile -> file to change
     ifstream fin;
-    fin.open(infile, ios::in);
+    fin.open(infile, ios::in);										// in means input -> the file is open for reading the Internal Stream buffer supports input operations
 
     if (!fin) 
 	{
-        cerr << "Error when opening the file " << infile << endl;
+        cerr << "Error : while opening the file " << infile << endl;
         return 1;
     }
 
-    string outfile = infile + ".replace";
+    string outfile = infile + ".replace";							//name of the outfile -> newfile
     ofstream fout;
-    fout.open(outfile, ios::out | ios::trunc);
+    fout.open(outfile, ios::out | ios::trunc);						// out means output -> open for writing, trunc -> suppress any existing content
 
     if (!fout) {
-        cerr << "error: unable to open " << outfile << endl;
-
+        cerr << "Error : while opening/creating the file " << outfile << endl;
         return 3;
     }
 
