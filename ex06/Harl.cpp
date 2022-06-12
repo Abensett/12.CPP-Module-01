@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:09 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/13 01:13:58 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/13 01:17:11 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,34 @@ Harl::~Harl (void) {cout << "Destruction of Harl "<< endl;};
 
 Harl::Harl(void) {cout << "Construction of Harl "<< endl;};
 
-void Harl::complain( std::string level ){
+void Harl::complain( std::string level )
+{
 
-	const ErrorDictionnary ErrorsD[4] =
+	int i;
+
+	const  string ErrorsD[4] =
 	{
-		{ "DEBUG", &Harl::debug },
-		{ "INFO", &Harl::info },
-		{ "WARNING", &Harl::warning },
-		{ "ERROR", &Harl::error }
+		"DEBUG",
+		"INFO",
+		"WARNING",
+		"ERROR",
 	};
 
-	for (int i = 0; i < 4; i++)
+	for (i = 0; i < 4; i++)
 	{
-		if (level == ErrorsD[i].key)
-		{
-			void (Harl::*func)(void) const = ErrorsD[i].func;
-			(this->*func)();
+		if (level == ErrorsD[i])			// break when error found the value of i stops here
 			break;
-		}
+	}
+	switch (i)								// printf the error of index i and all the ones after
+	{
+		case 0:
+			debug();
+		case 1:
+			info();
+		case 2:
+			warning();
+		case 3:
+			error();
 	}
 }
 
@@ -44,7 +54,7 @@ void Harl::complain( std::string level ){
 	{
 	cout << "[ DEBUG ]" << endl;
 	cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle"
-			"-special-ketchup burger. I really do!" << endl;
+			"-special-ketchup burger. I really do!" << endl  << endl;
 	}
 
 	void Harl::info(void) const
@@ -66,5 +76,6 @@ void Harl::complain( std::string level ){
 	void Harl::error(void) const
 	{
 		cout << "[ ERROR ]" << endl;
-		cout << "This is unacceptable! I want to speak to the manager now." << endl;
+		cout << "This is unacceptable! I want to speak to the manager now." << endl  << endl;
 	}
+
