@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 01:12:15 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/13 01:29:37 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Zombie.hpp"
 /* En c++ on utilise new et delete car ils font appel cons/destr
 CAS TABLEAU : CLASS *variable = new CLASS[N]
-			  delete [] variable */
+			  					delete [] variable */
 
 int main(void)
 {

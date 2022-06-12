@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/12 00:48:06 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/13 01:29:27 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "Zombie.hpp"
 /* En c++ on utilise new et delete car ils font appel cons/destr
 	StackZ  la stack d'où  destruction at the end of the function
-	randomChump stack de la fonction RandomChump*/
+	randomChump stack de la fonction RandomChump */
 int main(void)
 {
 	randomChump("Random");						// Allocation statique -> stack de RandomChump
@@ -25,6 +25,6 @@ int main(void)
 	Zombie stackz = Zombie("StackZ");			// Allocation statique -> stack
 	stackz.announce();
 
-	delete heapz;								// Free 
+	delete heapz;								// Free
 	return 0;
 }

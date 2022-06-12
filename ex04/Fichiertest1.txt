@@ -1,8 +1,8 @@
 Dans ce fichier
 j'ai écrit
 plus de 5 lignes
-yes 
+yes
 more than
-5 
+5
 lignes
 let's switch lignes and words
