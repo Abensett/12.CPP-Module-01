@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/13 00:33:32 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/13 02:39:28 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ using std::cout;
 using std::endl;
 
 
-int main(void)
+int main(int ac, char **av)
 {
-	Harl Harlito;
-	Harlito.complain("WARNING");
-	cout << endl;
+	if( ac == 2)
+	{
+		Harl Harlito;
+		Harlito.complain(av[1]);
+	}
+
 }
